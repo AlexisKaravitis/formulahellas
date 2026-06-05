@@ -13,7 +13,7 @@ export const revalidate = 60;
 export const metadata = generateSEOMetadata({
   title: 'Home',
   description:
-    'Formula Hellas — a new Formula Student competition hosted at the Serres Racing Circuit in Northern Greece. The inaugural edition runs 02–07 August 2026.',
+    'Formula Hellas is a new Formula Student competition hosted at the Serres Racing Circuit in Northern Greece. The first edition runs 02–07 August 2026.',
   url: '/',
 });
 
@@ -34,13 +34,13 @@ export default async function Home() {
     )
     .catch(() => []);
 
-  // Static structured data for the inaugural 2026 competition.
+  // Static structured data for the 2026 competition.
   const eventStructuredData = generateStructuredData({
     type: 'Event',
     data: {
       name: 'Formula Hellas 2026',
       description:
-        'The inaugural Formula Hellas — a Formula Student competition at the Serres Racing Circuit, Northern Greece.',
+        'The first Formula Hellas: a Formula Student competition at the Serres Racing Circuit, Northern Greece.',
       startDate: '2026-08-02',
       endDate: '2026-08-07',
       locationName: 'Serres Racing Circuit',

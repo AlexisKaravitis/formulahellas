@@ -16,10 +16,9 @@ export default function ScrutineerApplicationPage() {
         <h1 className="text-4xl font-bold text-gray-900 mb-6">Become a Scrutineer</h1>
         
         <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-8">
-          <h2 className="text-2xl font-semibold text-blue-900 mb-4">Form has moved</h2>
+          <h2 className="text-2xl font-semibold text-blue-900 mb-4">Apply via Google Form</h2>
           <p className="text-lg text-blue-800 mb-8">
-            Our application system is currently undergoing maintenance. 
-            Please use our Google Form to submit your application.
+            Applications are handled through our Google Form. Use the button below to apply.
           </p>
           
           <a

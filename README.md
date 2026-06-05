@@ -1,6 +1,6 @@
 # Formula Hellas Website
 
-A modern, responsive website for Formula Hellas — a new Formula Student competition, part of the Formula Student World Competition Series, hosted at the Serres Racing Circuit in Northern Greece. The inaugural edition runs 02–07 August 2026.
+A modern, responsive website for Formula Hellas, a new Formula Student competition, part of the Formula Student World Competition Series, hosted at the Serres Racing Circuit in Northern Greece. The first edition runs 02–07 August 2026.
 
 ## Features
 

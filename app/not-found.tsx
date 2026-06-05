@@ -8,9 +8,9 @@ export default function NotFound() {
   const router = useRouter();
   const quickLinks = [
     { href: '/', label: 'Home', icon: Home },
-    { href: '/events', label: 'Events', icon: Calendar },
+    { href: '/events/2026', label: 'Competition', icon: Calendar },
+    { href: '/about', label: 'About', icon: Users },
     { href: '/posts', label: 'News & Posts', icon: FileText },
-    { href: '/about', label: 'About Us', icon: Users },
     { href: '/contact', label: 'Contact', icon: Search },
   ];
 

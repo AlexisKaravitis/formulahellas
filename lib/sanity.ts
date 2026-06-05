@@ -19,7 +19,6 @@ export const client = createClient({
   useCdn: true, // Enable CDN for read operations - reduces API calls significantly
   apiVersion: '2024-01-01',
   // CDN is safe for read operations and provides eventual consistency
-  // Quiz content is set before activation, so CDN caching is safe
 });
 
 // Non-CDN client for write operations (if needed in the future)

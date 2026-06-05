@@ -14,11 +14,11 @@ import {
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Formula Hellas 2026',
   description:
-    'The inaugural Formula Hellas — a Formula Student competition at the Serres Racing Circuit, Northern Greece, 02–07 August 2026. Two classes (CV and EV), 12 slots each.',
+    'The first Formula Hellas: a Formula Student competition at the Serres Racing Circuit, Northern Greece, 02–07 August 2026. Two classes (CV and EV), 12 slots each.',
   url: '/events/2026',
 });
 
-// The inaugural edition is the only competition. Any other year is not found.
+// The 2026 competition is the only edition. Any other year is not found.
 export default async function EventPage({
   params,
 }: {
@@ -34,7 +34,7 @@ export default async function EventPage({
     data: {
       name: 'Formula Hellas 2026',
       description:
-        'The inaugural Formula Hellas — a Formula Student competition at the Serres Racing Circuit, Northern Greece.',
+        'The first Formula Hellas: a Formula Student competition at the Serres Racing Circuit, Northern Greece.',
       startDate: '2026-08-02',
       endDate: '2026-08-07',
       locationName: 'Serres Racing Circuit',
@@ -61,7 +61,7 @@ export default async function EventPage({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Header */}
           <span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary-blue/10 text-primary-blue text-sm font-semibold">
-            Inaugural edition
+            First edition
           </span>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Formula Hellas 2026</h1>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gray-700 mb-10">

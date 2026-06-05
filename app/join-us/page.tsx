@@ -7,7 +7,7 @@ export const revalidate = 60;
 
 export const metadata = generateSEOMetadata({
   title: "Join Us",
-  description: "Become a judge, scrutineer, or volunteer for Formula Hellas. Help us bring the inaugural competition to life.",
+  description: "Become a judge, scrutineer, or volunteer for Formula Hellas. Help us bring the first edition to life.",
   url: "/join-us",
 });
 
@@ -44,8 +44,8 @@ export default async function JoinUsPage() {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-blue transition-colors">Become a Judge</h2>
             <p className="text-gray-600 mb-6">
-              Judges evaluate teams on design, cost, and business presentation. Share your 
-              expertise and help shape the future of engineering.
+              Judges evaluate teams on design, cost, and business presentation. Bring your
+              experience and give students feedback they&apos;ll actually use.
             </p>
             <ul className="text-sm text-gray-600 space-y-2 mb-6">
               <li>• Evaluate vehicle design and engineering</li>
@@ -146,25 +146,25 @@ export default async function JoinUsPage() {
             <div>
               <h3 className="font-semibold mb-2">Professional Development</h3>
               <p className="text-sm">
-                Enhance your skills and network with industry professionals and talented students.
+                You&apos;ll work next to experienced engineers and sharp student teams, good people to know in this field.
               </p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Make a Difference</h3>
               <p className="text-sm">
-                Support the next generation of engineers and contribute to their success.
+                Your feedback is often what a team actually takes away and builds on. That&apos;s the part that sticks.
               </p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Exciting Environment</h3>
               <p className="text-sm">
-                Experience the thrill of competition and cutting-edge engineering innovation.
+                Real cars, real engineering, on a proper motorsport circuit. A good weekend to be part of.
               </p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Community</h3>
               <p className="text-sm">
-                Join a passionate community of engineers, educators, and motorsport enthusiasts.
+                Engineers, academics and motorsport people who genuinely care about this, the kind of crowd that makes a paddock worth being in.
               </p>
             </div>
           </div>

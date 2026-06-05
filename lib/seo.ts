@@ -35,7 +35,7 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
 
   const fullTitle = title
     ? `${title} | ${siteName}`
-    : `${siteName} — Formula Student at the Serres Racing Circuit`;
+    : `${siteName}: Formula Student at the Serres Racing Circuit`;
 
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
 

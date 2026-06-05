@@ -22,11 +22,11 @@ import {
 export const hero = {
   heading: 'Formula Hellas',
   tagline:
-    'Built by Formula Student alumni. Hosted at the largest circuit in the Balkans.',
+    'Built by Formula Student alumni. Hosted at the Serres Racing Circuit, the only FIA- and FIM-accredited circuit in Greece.',
   keyFacts: [
     { label: 'Dates', value: COMPETITION_DATES },
     { label: 'Venue', value: COMPETITION_LOCATION },
-    { label: 'Edition', value: 'Inaugural edition' },
+    { label: 'Edition', value: 'First edition' },
   ],
   // Registration window text shown beside the (disabled) Register CTA.
   registrationNotice: `Registration opens ${REGISTRATION_OPENS}.`,
@@ -34,8 +34,8 @@ export const hero = {
 
 export const home = {
   intro: {
-    heading: 'The inaugural Formula Hellas',
-    body: `Formula Hellas is a new Formula Student competition, organised by Formula Student alumni and hosted at the ${VENUE_NAME} in Northern Greece. Its first edition runs ${COMPETITION_DATES_LONG}, bringing university teams together to design, build and race formula-style cars at the largest circuit in the Balkans. Formula Hellas is part of the Formula Student World Competition Series.`,
+    heading: 'The first Formula Hellas',
+    body: `Formula Hellas is a new Formula Student competition, run by Formula Student alumni together with the ${VENUE_NAME} in Northern Greece. Its first edition runs ${COMPETITION_DATES_LONG} and brings university teams together to design, build and race formula-style cars at the largest racing circuit in the Balkans. Formula Hellas is part of the Formula Student World Competition Series.`,
   },
   highlights: [
     {
@@ -44,11 +44,11 @@ export const home = {
     },
     {
       title: 'A circuit built for it',
-      body: 'The only FIA- and FIM-accredited motorsport facility in Greece, built to safety standards for racing up to Formula 3.',
+      body: 'Built to the safety standards for racing up to Formula 3, and equipped for the full range of Formula Student dynamic events.',
     },
     {
       title: 'Development over rankings',
-      body: 'Meaningful, constructive feedback and genuine team development — every team evaluated as an independent entity, in respect of its level and goals.',
+      body: 'Meaningful, constructive feedback and genuine team development, with every team evaluated as an independent entity, in respect of its level and goals.',
     },
   ],
 };
@@ -57,26 +57,26 @@ export const home = {
 
 export const about = {
   title: 'About Formula Hellas',
-  intro: `Formula Hellas is a new Formula Student competition, organised by Formula Student alumni and hosted by the ${VENUE_NAME}. The inaugural edition takes place ${COMPETITION_DATES_LONG} and is part of the Formula Student World Competition Series.`,
+  intro: `Formula Hellas is a new Formula Student competition, organised by Formula Student alumni together with the ${VENUE_NAME}. The first edition takes place ${COMPETITION_DATES_LONG} and is part of the Formula Student World Competition Series.`,
 
   whatIs: {
     heading: 'What is Formula Student?',
-    body: 'Formula Student is an international engineering competition in which university teams design, build and race formula-style cars. It challenges students to turn classroom theory into a real, competitive vehicle — developing engineering, project-management and teamwork skills along the way.',
+    body: 'Formula Student is an international engineering competition in which university teams design, build and race formula-style cars. It challenges students to turn classroom theory into a real, competitive vehicle, building engineering, project-management and teamwork skills along the way.',
   },
 
   mission: {
     heading: 'Our mission',
-    body: 'Formula Hellas is built around meaningful, constructive feedback and genuine team development rather than rankings. We champion technical excellence, innovation, safety and teamwork, and we evaluate each team as an independent entity — in respect of its own level and goals — so that every team leaves with something to build on.',
+    body: 'Our mission is simple: give Greece its own Formula Student competition, help teams get better with every run, and, best of all, have fun on track.',
   },
 
   organisers: {
-    heading: 'Who runs it',
-    body: `Formula Hellas is organised by Formula Student alumni who have lived the competition first-hand, and is hosted by the ${VENUE_NAME}. As part of the Formula Student World Competition Series, it follows the international standards teams already know.`,
+    heading: 'Who we are',
+    body: `Formula Hellas is run by a team of Formula Student alumni who've lived the competition first-hand, together with the ${VENUE_NAME}. As part of the Formula Student World Competition Series, it follows the international standards teams already know.`,
   },
 
   classes: {
     heading: 'Classes (2026)',
-    intro: 'The inaugural edition runs two vehicle classes, with places allocated first come, first served.',
+    intro: 'Formula Hellas 2026 runs two vehicle classes, with places allocated first come, first served.',
     items: [
       {
         name: 'Internal Combustion Vehicle (CV) Class',
@@ -98,7 +98,7 @@ export const about = {
     facilities: [
       {
         title: 'Exclusive pit boxes',
-        body: 'Every team receives its own pit box — a covered, organised and secure workspace with direct access to the track.',
+        body: 'Every team receives its own pit box: a covered, organised and secure workspace with direct access to the track.',
       },
       {
         title: 'On-site campsite',
@@ -137,7 +137,7 @@ export const rules = {
 
 export const registration = {
   title: 'Registration & Eligibility',
-  intro: `Registration for the inaugural Formula Hellas is first come, first served, with 12 Electric (EV) and 12 Internal Combustion (CV) slots. Registration opens ${REGISTRATION_OPENS} and closes ${REGISTRATION_CLOSES}.`,
+  intro: `Registration for Formula Hellas 2026 is first come, first served, with 12 Electric (EV) and 12 Internal Combustion (CV) slots. Registration opens ${REGISTRATION_OPENS} and closes ${REGISTRATION_CLOSES}.`,
 
   eligibility: {
     heading: 'Eligibility',
@@ -156,7 +156,7 @@ export const registration = {
       'The team captain sends a registration email including: team name, university, category (EV or CV), and the team captain’s full name and contact details.',
       'Slots are allocated in the order in which complete emails are received.',
       'Once a category is full, further teams are placed on a waiting list.',
-      'Every team receives a confirmation — either a confirmed slot or a place on the waiting list.',
+      'Every team receives a confirmation, either a confirmed slot or a place on the waiting list.',
     ],
   },
 
@@ -226,5 +226,5 @@ export const contact = {
 export const joinUs = {
   title: 'Join Us',
   intro:
-    'Formula Hellas relies on dedicated judges, scrutineers and volunteers to bring the inaugural competition to life. Join the team and be part of it from the very first edition.',
+    'Formula Hellas relies on dedicated judges, scrutineers and volunteers to bring its first edition to life. Join the team and be part of it from the very start.',
 };

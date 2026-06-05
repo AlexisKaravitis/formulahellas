@@ -25,9 +25,9 @@ const quickLinks = [
 ];
 
 const joinUsLinks = [
-  { label: 'Become a judge', url: '/join-us' },
-  { label: 'Become a scrutineer', url: '/join-us' },
-  { label: 'Become a volunteer', url: '/join-us' },
+  { label: 'Become a Judge', url: '/join-us' },
+  { label: 'Become a Scrutineer', url: '/join-us' },
+  { label: 'Become a Volunteer', url: '/join-us' },
 ];
 
 export default function FooterClient() {

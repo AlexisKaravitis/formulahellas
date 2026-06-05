@@ -13,8 +13,6 @@ export default function robots(): MetadataRoute.Robots {
           '/studio/',
           '/api/',
           '/team-portal/',
-          '/registration-tests/admin/',
-          '/test-email/',
           '/studio-debug/',
         ],
       },

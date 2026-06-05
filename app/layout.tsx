@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = generateSEOMetadata({
   title: undefined, // Will use default title
-  description: "Formula Hellas is a new Formula Student competition, part of the Formula Student World Competition Series, hosted at the Serres Racing Circuit in Northern Greece. The inaugural edition runs 02–07 August 2026.",
+  description: "Formula Hellas is a new Formula Student competition, part of the Formula Student World Competition Series, hosted at the Serres Racing Circuit in Northern Greece. The first edition runs 02–07 August 2026.",
 });
 
 export const viewport: Viewport = {

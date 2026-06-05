@@ -27,7 +27,7 @@ export default function TeamPortalPage() {
               title={COMING_SOON}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold rounded-lg bg-gray-300 text-gray-600 cursor-not-allowed shadow"
             >
-              Login — {COMING_SOON}
+              Login ({COMING_SOON})
             </button>
           )}
         </div>

@@ -7,7 +7,7 @@ import { SITE_URL } from '@/lib/site-config';
 export const metadata = generateSEOMetadata({
   title: 'About',
   description:
-    'About Formula Hellas — a new Formula Student competition hosted at the Serres Racing Circuit. Our mission, the 2026 classes, and the venue.',
+    'About Formula Hellas: a new Formula Student competition hosted at the Serres Racing Circuit. Our mission, the 2026 classes, and the venue.',
   url: '/about',
 });
 

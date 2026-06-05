@@ -13,8 +13,8 @@ const navItems = [
   { href: '/about', label: 'About' },
   { href: '/registration', label: 'Registration' },
   { href: '/rules', label: 'Rules & Documents' },
-  { href: '/join-us', label: 'Join us' },
-  { href: '/contact', label: 'Contact us' },
+  { href: '/join-us', label: 'Join Us' },
+  { href: '/contact', label: 'Contact' },
   { href: '/team-portal', label: 'Team Portal' },
 ];
 

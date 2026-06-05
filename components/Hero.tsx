@@ -40,7 +40,7 @@ export default function Hero() {
           </div>
 
           <span className="inline-block mb-5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm font-semibold uppercase tracking-wider">
-            Inaugural edition · 2026
+            First edition · 2026
           </span>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
@@ -82,7 +82,7 @@ export default function Hero() {
                 title={COMING_SOON}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white/30 text-white/80 font-bold rounded-xl cursor-not-allowed shadow-xl text-lg"
               >
-                Register — {COMING_SOON}
+                Register ({COMING_SOON})
               </button>
             )}
             <p className="text-sm text-gray-200">{hero.registrationNotice}</p>

@@ -7,7 +7,7 @@ import { REGISTRATION_EMAIL, INFO_EMAIL, COMING_SOON, SITE_URL } from '@/lib/sit
 export const metadata = generateSEOMetadata({
   title: 'Registration & Eligibility',
   description:
-    'How to register for the inaugural Formula Hellas: eligibility, the first-come first-served slots, the registration window, the Formula Hellas Hub, and fees.',
+    'How to register for Formula Hellas 2026: eligibility, the first-come first-served slots, the registration window, the Formula Hellas Hub, and fees.',
   url: '/registration',
 });
 
@@ -86,7 +86,7 @@ export default function RegistrationPage() {
                   className="inline-flex items-center gap-2 px-8 py-4 bg-gray-300 text-gray-600 font-bold rounded-xl cursor-not-allowed shadow"
                 >
                   <Mail className="w-5 h-5" />
-                  Register — {COMING_SOON}
+                  Register ({COMING_SOON})
                 </button>
               )}
               <p className="mt-3 text-sm text-gray-600">

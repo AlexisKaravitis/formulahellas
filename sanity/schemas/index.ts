@@ -7,7 +7,6 @@ import { postType } from './postType';
 import event from './event';
 import scheduleItem from './scheduleItem';
 import team from './team';
-import registrationQuiz from './registrationQuiz';
 import homePage from './homePage';
 
 export const schemaTypes = [
@@ -20,7 +19,6 @@ export const schemaTypes = [
   event,
   scheduleItem,
   team,
-  registrationQuiz,
   homePage,
 ];
 

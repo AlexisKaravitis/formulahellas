@@ -12,15 +12,14 @@
 export const SITE_NAME = 'Formula Hellas';
 
 export const SITE_TAGLINE =
-  'Built by Formula Student alumni. Hosted at the largest circuit in the Balkans.';
+  'Built by Formula Student alumni. Hosted at the Serres Racing Circuit, the only FIA- and FIM-accredited circuit in Greece.';
 
 export const SITE_DESCRIPTION =
-  'Formula Hellas is a new Formula Student competition, part of the Formula Student World Competition Series, hosted at the Serres Racing Circuit in Northern Greece. The inaugural edition runs 02–07 August 2026.';
+  'Formula Hellas is a new Formula Student competition, part of the Formula Student World Competition Series, hosted at the Serres Racing Circuit in Northern Greece. The first edition runs 02–07 August 2026.';
 
 /**
- * Production domain — used only for canonical URLs, the sitemap and
- * structured data. Override per-environment with NEXT_PUBLIC_SITE_URL.
- * TODO: confirm the final production domain before launch.
+ * Production domain — used for canonical URLs, the sitemap and structured data.
+ * Confirmed as formulahellas.gr. Override per-environment with NEXT_PUBLIC_SITE_URL.
  */
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://formulahellas.gr';
@@ -80,11 +79,8 @@ export const REGISTRATION_CLOSES = 'when slots fill, no later than 13-06-2026';
 /*  Resend. The defaults use the placeholder domain — update before launch.   */
 /* -------------------------------------------------------------------------- */
 
-export const EMAIL_FROM_QUIZ =
-  process.env.FROM_EMAIL || 'Formula Hellas <noreply@formulahellas.gr>';
 export const EMAIL_FROM_NOTIFICATIONS =
   process.env.FROM_EMAIL || 'Formula Hellas <noreply@formulahellas.gr>';
-export const EMAIL_REPLY_TO = process.env.REPLY_TO_EMAIL || 'noreply@formulahellas.gr';
 export const EMAIL_BASE_URL = SITE_URL;
 
 /** Convenience label used wherever a value is not yet available. */

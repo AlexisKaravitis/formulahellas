@@ -97,7 +97,7 @@ export default async function RulesPage() {
                     title={COMING_SOON}
                   >
                     <Clock className="w-4 h-4 mr-2" />
-                    Download — {COMING_SOON}
+                    Download ({COMING_SOON})
                   </span>
                 </div>
               </Card>
