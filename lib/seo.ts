@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, INSTAGRAM_URL, LINKEDIN_URL } fr
 const siteUrl = SITE_URL;
 const siteName = SITE_NAME;
 const defaultDescription = SITE_DESCRIPTION;
-const defaultImage = `${siteUrl}/logo-placeholder.svg`;
+const defaultImage = `${siteUrl}/images/brand/fh-logo.png`;
 
 export interface SEOConfig {
   title?: string;
@@ -102,7 +102,7 @@ export function generateStructuredData(config: {
         ...baseStructuredData,
         name: siteName,
         url: siteUrl,
-        logo: `${siteUrl}/logo-placeholder.svg`,
+        logo: `${siteUrl}/images/brand/fh-logo.png`,
         sameAs: [LINKEDIN_URL, INSTAGRAM_URL].filter(Boolean),
         ...data,
       };
@@ -147,7 +147,7 @@ export function generateStructuredData(config: {
           name: siteName,
           logo: {
             '@type': 'ImageObject',
-            url: `${siteUrl}/logo-placeholder.svg`,
+            url: `${siteUrl}/images/brand/fh-logo.png`,
           },
         },
         ...data,

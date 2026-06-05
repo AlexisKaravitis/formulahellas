@@ -54,6 +54,26 @@ export const VENUE_NAME = 'Serres Racing Circuit';
 export const VENUE_URL = 'https://serrescircuit.gr';
 
 /**
+ * Serres Racing Circuit's own social channels (the venue/host's accounts, not
+ * Formula Hellas's). Verified from serrescircuit.gr. Set to null to hide one.
+ */
+export const VENUE_INSTAGRAM_URL: string | null = 'https://www.instagram.com/serres.racing.circuit/';
+export const VENUE_FACEBOOK_URL: string | null = 'https://www.facebook.com/serres.racing.circuit';
+export const VENUE_X_URL: string | null = 'https://x.com/SerresRacing';
+export const VENUE_TIKTOK_URL: string | null = 'https://www.tiktok.com/@serres.racing.circuit';
+
+/* Serres Racing Circuit location & contact (the venue's own details, verified from serrescircuit.gr). */
+export const VENUE_ADDRESS = 'Omonia Sports Park, Serres, Greece';
+export const VENUE_PHONE = '+30 23210 52592';
+export const VENUE_EMAIL = 'info@serrescircuit.gr';
+export const VENUE_HOURS = 'Daily, 09:00 until one hour before sunset';
+/** Google Maps share link for the circuit (used for the "Open in Google Maps" button). */
+export const VENUE_MAPS_LINK = 'https://share.google/oqBBUJPwXYsUPg2le';
+/** Keyless Google Maps embed (place search). */
+export const VENUE_MAPS_EMBED =
+  'https://www.google.com/maps?q=Serres%20Racing%20Circuit%2C%20Serres%2C%20Greece&output=embed';
+
+/**
  * External "Formula Hellas Hub" portal where registered teams manage their
  * profile, uploads and inspections. Leave null until the Hub URL is known
  * (renders the Team Portal login as "Coming soon").

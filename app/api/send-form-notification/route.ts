@@ -51,7 +51,7 @@ function generateFormNotificationEmail(
                 <!-- Header -->
                 <tr>
                   <td style="padding: 40px 40px 20px; text-align: center; background-color: #ffffff; border-radius: 8px 8px 0 0; border-bottom: 2px solid #e5e7eb;">
-                    <img src="${baseUrl}/logo-placeholder.svg" alt="Formula Hellas" style="max-width: 200px; height: auto; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto;" />
+                    <img src="${baseUrl}/images/brand/fh-logo.png" alt="Formula Hellas" style="max-width: 200px; height: auto; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto;" />
                     <p style="margin: 8px 0 0; color: #6b7280; font-size: 16px;">New ${formTypeLabels[formType] || formType}</p>
                   </td>
                 </tr>

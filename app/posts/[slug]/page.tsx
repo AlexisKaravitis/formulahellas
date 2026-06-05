@@ -68,7 +68,7 @@ export default async function PostPage({
     data: {
       headline: post.title,
       description: post.excerpt || post.title,
-      image: postImageUrl || `${siteUrl}/logo-placeholder.svg`,
+      image: postImageUrl || `${siteUrl}/images/brand/fh-logo.png`,
       datePublished: post.publishedAt,
       dateModified: post._updatedAt || post.publishedAt,
     },

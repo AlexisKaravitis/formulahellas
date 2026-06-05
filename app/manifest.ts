@@ -9,13 +9,12 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#0066FF',
+    theme_color: '#2D4DF5',
     icons: [
       {
-        // Placeholder — replace with the final Formula Hellas icon.
-        src: '/logo-placeholder.svg',
+        src: '/images/brand/fh-mark.png',
         sizes: 'any',
-        type: 'image/svg+xml',
+        type: 'image/png',
       },
     ],
   };

@@ -30,7 +30,31 @@
       "Bash(rm -f public/cv-registration-results.json public/ev-registration-results.json public/quiz-questions-template.csv \"FIHU Quiz RE Score.csv\" \"FIHU Quiz RE Scores.csv\")",
       "Bash(ls *.csv)",
       "Bash(npm run *)",
-      "Bash(NEXT_PUBLIC_SANITY_PROJECT_ID=dummyproject NEXT_PUBLIC_SANITY_DATASET=production npm run build)"
+      "Bash(NEXT_PUBLIC_SANITY_PROJECT_ID=dummyproject NEXT_PUBLIC_SANITY_DATASET=production npm run build)",
+      "WebFetch(domain:serrescircuit.gr)",
+      "WebSearch",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3333/about)",
+      "Bash(echo \"about: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3333/about\\)\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -o /dev/null -w '%{url_effective}\\\\n' \"https://share.google/oqBBUJPwXYsUPg2le\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://serrescircuit.gr/en/\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" -D - -o /dev/null \"https://share.google/oqBBUJPwXYsUPg2le\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://share.google/oqBBUJPwXYsUPg2le\")",
+      "Bash(grep -oE '@?[0-9]{2}\\\\.[0-9]{4,},[0-9]{2}\\\\.[0-9]{4,}')",
+      "Bash(mkdir -p public/images/venue)",
+      "Bash(ls public/images/venue)",
+      "Bash(echo \"about status: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3333/about\\)\")",
+      "Bash(cp \"serres/scircui-side.jpg\" \"public/images/venue/serres-aerial.jpg\")",
+      "Bash(cp \"serres/new-logo-serres.png\" \"public/images/venue/src-logo.png\")",
+      "Bash(cp \"serres/498674744_1115440217285726_1063436476472535515_n.jpg\" \"public/images/venue/src-logo-white.jpg\")",
+      "Bash(cp \"serres/495209942_1124572373039177_4487605683844245231_n.png\" \"public/images/venue/serres-collage.png\")",
+      "Bash(rm -rf serres)",
+      "Bash(curl -s 'http://localhost:3333/about?nocache=1')",
+      "Bash(echo \"src-logo.png in HTML now \\(want 0\\): $\\(curl -s 'http://localhost:3333/about?nocache=1')",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3333/)",
+      "Bash(echo \"home: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3333/\\)\")",
+      "Bash(curl -s http://localhost:3333/)",
+      "Bash(echo \"fonts loaded: $\\(curl -s http://localhost:3333/)",
+      "mcp__Claude_in_Chrome__list_connected_browsers"
     ]
   }
 }

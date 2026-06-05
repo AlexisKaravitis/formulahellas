@@ -26,7 +26,8 @@ export default function RegistrationPage() {
       <div className="bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <Breadcrumbs items={[{ label: 'Registration' }]} className="mb-6" />
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{registration.title}</h1>
+          <span className="eyebrow">Take part</span>
+          <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{registration.title}</h1>
           <p className="text-lg text-gray-700 mb-10">{registration.intro}</p>
 
           {/* Registration window */}

@@ -3,39 +3,22 @@ import clsx from 'clsx';
 
 interface BadgeProps {
   children: ReactNode;
-  variant?: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'racing';
-  size?: 'sm' | 'md';
+  variant?: 'soft' | 'solid' | 'outline';
   className?: string;
 }
 
-export default function Badge({
-  children,
-  variant = 'default',
-  size = 'md',
-  className,
-}: BadgeProps) {
-  const baseStyles = 'inline-flex items-center font-medium rounded-full';
-  
-  const variants = {
-    default: 'bg-gray-100 text-gray-800',
-    primary: 'bg-primary-blue/10 text-primary-blue',
-    success: 'bg-accent-green/10 text-accent-green-dark',
-    warning: 'bg-accent-amber/10 text-accent-amber',
-    danger: 'bg-racing-red/10 text-racing-red',
-    racing: 'bg-gradient-racing text-white',
-  };
-  
-  const sizes = {
-    sm: 'px-2 py-0.5 text-xs',
-    md: 'px-3 py-1 text-sm',
-  };
+const variants = {
+  soft: 'bg-primary-blue/10 text-primary-blue-dark ring-1 ring-inset ring-primary-blue/20',
+  solid: 'bg-primary-blue text-white shadow-sm',
+  outline: 'text-white/90 ring-1 ring-inset ring-white/25 bg-white/5 backdrop-blur-sm',
+};
 
+export default function Badge({ children, variant = 'soft', className }: BadgeProps) {
   return (
     <span
       className={clsx(
-        baseStyles,
+        'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider',
         variants[variant],
-        sizes[size],
         className
       )}
     >
@@ -43,4 +26,3 @@ export default function Badge({
     </span>
   );
 }
-

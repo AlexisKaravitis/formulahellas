@@ -91,7 +91,8 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact</h1>
+        <span className="eyebrow">Get in touch</span>
+        <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Contact</h1>
         <p className="text-lg text-gray-600 mb-12">
           Have questions about Formula Hellas? Send us a message, or use the channels below. Some
           contact details are being finalised and are marked &ldquo;{COMING_SOON}&rdquo;.

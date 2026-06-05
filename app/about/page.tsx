@@ -1,6 +1,8 @@
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbStructuredData } from '@/lib/seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { CheckCircle2, Tent, Warehouse, Flag } from 'lucide-react';
+import VenueShowcase from '@/components/VenueShowcase';
+import Badge from '@/components/ui/Badge';
+import { Tent, Warehouse, Flag } from 'lucide-react';
 import { about } from '@/content/site';
 import { SITE_URL } from '@/lib/site-config';
 
@@ -29,7 +31,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-3xl mx-auto">
             <Breadcrumbs items={[{ label: 'About' }]} className="mb-6" />
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">{about.title}</h1>
+            <span className="eyebrow">About</span>
+            <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 mb-6">{about.title}</h1>
 
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="text-lg mb-10">{about.intro}</p>
@@ -46,15 +49,21 @@ export default function AboutPage() {
           </div>
 
           {/* Classes */}
-          <section id="classes" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">{about.classes.heading}</h2>
-            <p className="text-gray-600 mb-8">{about.classes.intro}</p>
+          <section id="classes" className="max-w-4xl mx-auto mt-20 scroll-mt-24">
+            <span className="eyebrow">Classes</span>
+            <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-gray-900">{about.classes.heading}</h2>
+            <div className="mt-4 rule-accent" />
+            <p className="mt-5 text-gray-600 mb-8">{about.classes.intro}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {about.classes.items.map((cls) => (
-                <div key={cls.name} className="bg-gray-50 border-2 border-gray-100 rounded-2xl p-6">
-                  <span className="inline-block mb-3 px-3 py-1 rounded-full bg-primary-blue/10 text-primary-blue text-sm font-semibold">
+                <div
+                  key={cls.name}
+                  className="group rounded-2xl bg-white border border-gray-200/80 shadow-sm p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-elev-3 hover:border-primary-blue/40"
+                >
+                  <Badge variant="soft" className="mb-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-blue" />
                     {cls.slots}
-                  </span>
+                  </Badge>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{cls.name}</h3>
                   <p className="text-gray-600 text-sm">{cls.body}</p>
                 </div>
@@ -66,9 +75,11 @@ export default function AboutPage() {
           </section>
 
           {/* Venue */}
-          <section id="venue" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{about.venue.heading}</h2>
-            <p className="text-gray-700 leading-relaxed mb-8">{about.venue.body}</p>
+          <section id="venue" className="max-w-4xl mx-auto mt-20 scroll-mt-24">
+            <span className="eyebrow">The Venue</span>
+            <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-gray-900">{about.venue.heading}</h2>
+            <div className="mt-4 rule-accent" />
+            <p className="mt-5 text-gray-700 leading-relaxed mb-8">{about.venue.body}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {about.venue.facilities.map((facility, i) => {
                 const Icon = facilityIcons[i % facilityIcons.length];
@@ -83,19 +94,31 @@ export default function AboutPage() {
                 );
               })}
             </div>
-            <ul className="mt-8 space-y-2">
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-200/80 rounded-2xl overflow-hidden border border-gray-200/80">
               {[
-                'Largest racing circuit in the Balkans',
-                'Only FIA- and FIM-accredited motorsport facility in Greece',
-                'Operating since 1998',
-                'Built to safety standards for racing up to Formula 3',
-              ].map((fact) => (
-                <li key={fact} className="flex items-start gap-2 text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-primary-blue shrink-0 mt-0.5" />
-                  <span>{fact}</span>
-                </li>
+                ['1998', 'Operating since'],
+                ['#1', 'Circuit in the Balkans'],
+                ['FIA · FIM', 'Accredited'],
+                ['F3', 'Built to standard'],
+              ].map(([n, l]) => (
+                <div key={l} className="bg-paper p-5 text-center">
+                  <div className="font-mono text-2xl md:text-3xl font-bold tabular-nums text-primary-blue-dark">{n}</div>
+                  <div className="mt-1.5 text-[11px] uppercase tracking-wider text-gray-500">{l}</div>
+                </div>
               ))}
-            </ul>
+            </div>
+
+            <VenueShowcase
+              aerialImage={about.venue.aerialImage}
+              aerialAlt={about.venue.aerialAlt}
+              collageImage={about.venue.collageImage}
+              logoDarkImage={about.venue.logoDarkImage}
+              mediaHeading={about.venue.mediaHeading}
+              mediaIntro={about.venue.mediaIntro}
+              socialHeading={about.venue.socialHeading}
+              videos={about.venue.videos}
+              locationHeading={about.venue.locationHeading}
+            />
           </section>
         </div>
       </div>

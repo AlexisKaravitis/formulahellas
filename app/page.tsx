@@ -1,9 +1,10 @@
 import Hero from '@/components/Hero';
 import NewsSection from '@/components/NewsSection';
 import DocumentCard from '@/components/DocumentCard';
+import Reveal from '@/components/Reveal';
 import { getFeaturedNews, getDocuments } from '@/lib/sanity.queries';
 import Link from 'next/link';
-import { ArrowRight, FileText, Users, Mail, ClipboardList } from 'lucide-react';
+import { ArrowRight, FileText, Users, Mail, ClipboardList, Layers, Flag, Sparkles } from 'lucide-react';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 import { generateStructuredData } from '@/lib/seo';
 import { home } from '@/content/site';
@@ -13,12 +14,20 @@ export const revalidate = 60;
 export const metadata = generateSEOMetadata({
   title: 'Home',
   description:
-    'Formula Hellas is a new Formula Student competition hosted at the Serres Racing Circuit in Northern Greece. The first edition runs 02–07 August 2026.',
+    'Formula Hellas — a new Formula Student competition hosted at the Serres Racing Circuit in Northern Greece. The first edition runs 02–07 August 2026.',
   url: '/',
 });
 
+const highlightIcons = [Layers, Flag, Sparkles];
+
+const quickLinks = [
+  { href: '/about', title: 'About', desc: 'Classes, venue and our mission', Icon: FileText },
+  { href: '/registration', title: 'Registration', desc: 'Eligibility, slots and fees', Icon: ClipboardList },
+  { href: '/join-us', title: 'Join Us', desc: 'Become a judge or volunteer', Icon: Users },
+  { href: '/contact', title: 'Contact', desc: 'Get in touch with us', Icon: Mail },
+];
+
 export default async function Home() {
-  // Optional CMS content — sections hide themselves when empty.
   const featuredNews = await getFeaturedNews().catch(() => []);
   const featuredDocs = await getDocuments()
     .then((docs) =>
@@ -26,21 +35,17 @@ export default async function Home() {
         .filter((doc: any) => doc.isFeatured)
         .filter(
           (doc: any) =>
-            doc.category !== 'handbook' &&
-            doc.category !== 'event-handbook' &&
-            doc.category !== 'results'
+            doc.category !== 'handbook' && doc.category !== 'event-handbook' && doc.category !== 'results'
         )
         .slice(0, 3)
     )
     .catch(() => []);
 
-  // Static structured data for the 2026 competition.
   const eventStructuredData = generateStructuredData({
     type: 'Event',
     data: {
       name: 'Formula Hellas 2026',
-      description:
-        'The first Formula Hellas: a Formula Student competition at the Serres Racing Circuit, Northern Greece.',
+      description: 'The first Formula Hellas: a Formula Student competition at the Serres Racing Circuit, Northern Greece.',
       startDate: '2026-08-02',
       endDate: '2026-08-07',
       locationName: 'Serres Racing Circuit',
@@ -51,62 +56,75 @@ export default async function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventStructuredData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventStructuredData) }} />
       <div className="flex flex-col">
         <Hero />
 
-        {/* Competition Intro */}
-        <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white via-gray-50 to-white">
+        {/* Intro */}
+        <section className="section bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <Reveal className="max-w-3xl mx-auto text-center">
+              <span className="eyebrow justify-center">01 — The Competition</span>
+              <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
                 {home.intro.heading}
               </h2>
-              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed px-4">
-                {home.intro.body}
-              </p>
-            </div>
+              <div className="mx-auto mt-5 rule-accent" />
+              <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">{home.intro.body}</p>
+            </Reveal>
           </div>
         </section>
 
-        {/* Highlights */}
-        <section className="py-12 sm:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {home.highlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-gray-50 p-8 rounded-2xl border-2 border-gray-100"
-                >
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.body}</p>
-                </div>
-              ))}
+        {/* Highlights — dark engineering band */}
+        <section className="section bg-ink text-white relative overflow-hidden">
+          <div className="absolute inset-0 grid-lines opacity-40" aria-hidden />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Reveal>
+              <span className="eyebrow eyebrow-light">02 — Why Formula Hellas</span>
+              <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-white max-w-2xl">
+                Built for engineers, by engineers.
+              </h2>
+              <div className="mt-5 rule-accent" />
+            </Reveal>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
+              {home.highlights.map((item, i) => {
+                const Icon = highlightIcons[i % highlightIcons.length];
+                return (
+                  <Reveal key={item.title} delay={i * 90}>
+                    <div className="group h-full rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-7 transition-all duration-300 ease-out hover:bg-white/[0.08] hover:border-primary-blue/40 hover:-translate-y-1">
+                      <div className="flex items-center justify-between">
+                        <div className="w-12 h-12 rounded-xl bg-primary-blue/15 ring-1 ring-primary-blue/30 flex items-center justify-center">
+                          <Icon className="w-6 h-6 text-blue-300" />
+                        </div>
+                        <span className="font-mono text-sm text-white/30">0{i + 1}</span>
+                      </div>
+                      <h3 className="mt-5 text-xl font-bold text-white">{item.title}</h3>
+                      <p className="mt-2 text-white/60 leading-relaxed">{item.body}</p>
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* Featured Documents (optional, from CMS) */}
         {featuredDocs.length > 0 ? (
-          <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+          <section className="section bg-paper">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 sm:mb-12 gap-4">
+              <Reveal className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
                 <div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Featured Documents</h2>
-                  <p className="text-gray-600 text-sm sm:text-base">Important competition documents and resources</p>
+                  <span className="eyebrow">Documents</span>
+                  <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-gray-900">Featured documents</h2>
                 </div>
                 <Link
                   href="/rules"
-                  className="text-primary-blue hover:text-primary-blue-dark font-semibold text-base transition-all flex items-center gap-2 group"
+                  className="inline-flex items-center gap-2 text-primary-blue-dark font-semibold transition-colors group"
                 >
-                  View All
+                  View all
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              </Reveal>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {featuredDocs.map((doc: any) => (
                   <DocumentCard key={doc._id} document={doc} />
                 ))}
@@ -115,54 +133,39 @@ export default async function Home() {
           </section>
         ) : null}
 
-        {/* News Section (optional, from CMS) */}
+        {/* News (optional, from CMS) */}
         <NewsSection news={featuredNews.length > 0 ? featuredNews : []} />
 
         {/* Quick Links */}
-        <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section className="section bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">Quick Links</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              <Link
-                href="/about"
-                className="bg-white p-8 rounded-2xl border-2 border-gray-200 hover:border-primary-blue hover:shadow-xl transition-all transform hover:-translate-y-2 text-center group card-hover"
-              >
-                <div className="w-16 h-16 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-blue/20 transition-colors">
-                  <FileText className="w-8 h-8 text-primary-blue" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-blue transition-colors">About</h3>
-                <p className="text-gray-600 text-base">Classes, venue and our mission</p>
-              </Link>
-              <Link
-                href="/registration"
-                className="bg-white p-8 rounded-2xl border-2 border-gray-200 hover:border-primary-blue hover:shadow-xl transition-all transform hover:-translate-y-2 text-center group card-hover"
-              >
-                <div className="w-16 h-16 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-blue/20 transition-colors">
-                  <ClipboardList className="w-8 h-8 text-primary-blue" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-blue transition-colors">Registration</h3>
-                <p className="text-gray-600 text-base">Eligibility, slots and fees</p>
-              </Link>
-              <Link
-                href="/join-us"
-                className="bg-white p-8 rounded-2xl border-2 border-gray-200 hover:border-primary-blue hover:shadow-xl transition-all transform hover:-translate-y-2 text-center group card-hover"
-              >
-                <div className="w-16 h-16 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-blue/20 transition-colors">
-                  <Users className="w-8 h-8 text-primary-blue" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-blue transition-colors">Join Us</h3>
-                <p className="text-gray-600 text-base">Become a judge or volunteer</p>
-              </Link>
-              <Link
-                href="/contact"
-                className="bg-white p-8 rounded-2xl border-2 border-gray-200 hover:border-primary-blue hover:shadow-xl transition-all transform hover:-translate-y-2 text-center group card-hover"
-              >
-                <div className="w-16 h-16 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-blue/20 transition-colors">
-                  <Mail className="w-8 h-8 text-primary-blue" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-blue transition-colors">Contact</h3>
-                <p className="text-gray-600 text-base">Get in touch with us</p>
-              </Link>
+            <Reveal className="text-center max-w-2xl mx-auto">
+              <span className="eyebrow justify-center">Explore</span>
+              <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-gray-900">Start here</h2>
+              <p className="mt-3 text-gray-500">Everything you need to take part in the first edition.</p>
+            </Reveal>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {quickLinks.map((l, i) => (
+                <Reveal key={l.href} delay={i * 70}>
+                  <Link
+                    href={l.href}
+                    className="group relative block h-full rounded-2xl bg-white border border-gray-200/80 shadow-sm p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-elev-3 hover:border-primary-blue/40"
+                  >
+                    <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-blue to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center mb-4 group-hover:bg-primary-blue/20 transition-colors">
+                      <l.Icon className="w-6 h-6 text-primary-blue" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary-blue-dark transition-colors">
+                      {l.title}
+                    </h3>
+                    <p className="mt-1 text-gray-500 text-sm">{l.desc}</p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-primary-blue-dark text-sm font-semibold opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                      Open
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>

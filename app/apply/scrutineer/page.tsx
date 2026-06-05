@@ -9,7 +9,7 @@ export default function ScrutineerApplicationPage() {
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <Link href="/join-us" className="text-[#0066FF] hover:text-[#0052CC] mb-8 inline-block font-bold">
+        <Link href="/join-us" className="text-[#2D4DF5] hover:text-[#1E34CC] mb-8 inline-block font-bold">
           &larr; Back to Join Us
         </Link>
 
@@ -25,7 +25,7 @@ export default function ScrutineerApplicationPage() {
             href={googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-[#0066FF] text-white font-bold rounded-xl hover:bg-[#0052CC] transition-all transform hover:scale-105 shadow-xl text-lg"
+            className="inline-block px-8 py-4 bg-[#2D4DF5] text-white font-bold rounded-xl hover:bg-[#1E34CC] transition-all transform hover:scale-105 shadow-xl text-lg"
           >
             Open Google Form
           </a>
@@ -34,7 +34,7 @@ export default function ScrutineerApplicationPage() {
         <p className="text-gray-600">
           If you have any questions, please contact us at{' '}
           {CONTACT_EMAIL ? (
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#0066FF] underline">{CONTACT_EMAIL}</a>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#2D4DF5] underline">{CONTACT_EMAIL}</a>
           ) : (
             <span className="font-semibold">{COMING_SOON}</span>
           )}

@@ -38,7 +38,8 @@ export default async function RulesPage() {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{rules.title}</h1>
+        <span className="eyebrow">Regulations</span>
+        <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{rules.title}</h1>
         <p className="text-lg text-gray-600 mb-12 max-w-3xl">{rules.intro}</p>
 
         <div className="space-y-12">

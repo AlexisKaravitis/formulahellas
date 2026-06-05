@@ -109,6 +109,22 @@ export const about = {
         body: 'The circuit provides the space and specification required for the Formula Student dynamic events.',
       },
     ],
+    // Serres Racing Circuit imagery (local files in public/images/venue/).
+    aerialImage: '/images/venue/serres-aerial.jpg',
+    aerialAlt: 'Aerial view of the Serres Racing Circuit',
+    collageImage: '/images/venue/serres-collage.png',
+    logoImage: '/images/venue/src-logo.png', // dark logo, for light backgrounds
+    logoDarkImage: '/images/venue/src-logo-white.jpg', // white logo, for dark backgrounds
+    mediaHeading: 'See the circuit in action',
+    mediaIntro:
+      'A few laps around the Serres Racing Circuit, the largest racing circuit in the Balkans.',
+    // Facebook reels from the Serres Racing Circuit page. Add/remove reel URLs here.
+    videos: [
+      'https://www.facebook.com/reel/2508107492880593/',
+      'https://www.facebook.com/reel/2266788307113632/',
+    ],
+    socialHeading: 'Follow the Serres Racing Circuit',
+    locationHeading: 'Find the circuit',
   },
 };
 
@@ -202,7 +218,7 @@ export const fees = {
   },
   refunds: {
     heading: 'Cancellation & refunds',
-    body: 'A 100% net refund applies if the competition is cancelled, or if a team pays and later withdraws.',
+    body: 'A 100% net refund applies if the competition is cancelled.',
   },
 };
 
